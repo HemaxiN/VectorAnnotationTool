@@ -1,9 +1,10 @@
-# VectorAnnotationTool
-Simple tool for 3D nucleus-Golgi polarity vector annotation.
+# Vector Annotation Tool
+
+Simple tool for 3D nucleus-Golgi polarity vector annotation. This tool can be used to annotate vectors for [3DCellPol](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4947066) training.
 
 ![](https://github.com/HemaxiN/VectorAnnotationTool/blob/main/images/annotation_tool.png)
 
-This tool can be used to annotate vector for [3DCellPol](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4947066) training.
+
 
 ### How to Use It
 
