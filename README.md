@@ -8,5 +8,5 @@ The tool supports annotation of paired centroids and zooming, with the ability t
 
 ### How to Use It
 
-**Download the App**: Get the `annotation_vectors.zip` file, extract the files and use the ```annotation_vectors.exe``` file, available [here]([https://ucppt-my.sharepoint.com/:u:/g/personal/hnarotamo_ucp_pt/EYR3lB4dUAZCub1wn5Xtz3UBO4vFKlMzIhbmj1E8D1Fbfw?e=ZlgfXO](https://huggingface.co/Hemaxi/VectorAnnotationTool/tree/main)) or run the Python script [annotation_vectors.py](https://github.com/HemaxiN/VectorAnnotationTool/blob/main/annotation_vectors.py).
+**Download the App**: Get the `annotation_vectors.zip` file, extract the files and use the ```annotation_vectors.exe``` file, available [here](https://huggingface.co/Hemaxi/VectorAnnotationTool/tree/main)), OR  run the Python script [annotation_vectors.py](https://github.com/HemaxiN/VectorAnnotationTool/blob/main/annotation_vectors.py).
    
