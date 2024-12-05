@@ -21,5 +21,5 @@ The tool supports annotation of paired centroids and zooming, with the ability t
 4. **Zoom and Pan**: Use the mouse wheel to zoom in and out at the cursor's position. Drag the image with the left mouse button to move around the image.
 5. **Select Centroids**: Click on ```Select Centroids``` and follow these steps: Click on the image to mark a nucleus centroid (green dot). Click again to mark the corresponding Golgi centroid (red dot). A white line will automatically connect the two centroids. Note: You can change slices between marking the nucleus and Golgi centroids.
 6. **Remove a Vector**: Click on ```Remove Vector``` and then click on a white vector to delete it. Confirm the removal by navigating through the z-slices.
-7. ***Save/Load Annotations**: Use ```Save Centroids```to save annotations as a .csv file. Use ```Load Centroids``` to load existing annotations.
+7. **Save/Load Annotations**: Use ```Save Centroids```to save annotations as a .csv file. Use ```Load Centroids``` to load existing annotations.
    
