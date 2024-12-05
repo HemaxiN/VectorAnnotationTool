@@ -23,3 +23,8 @@ The tool supports annotation of paired centroids and zooming, with the ability t
 6. **Remove a Vector**: Click on ```Remove Vector``` and then click on a white vector to delete it. Confirm the removal by navigating through the z-slices.
 7. **Save/Load Annotations**: Use ```Save Centroids```to save annotations as a .csv file. Use ```Load Centroids``` to load existing annotations.
    
+## Output CSV files
+
+Each output CSV file has N rows, each row contains the (XN,YN,XG,YG,ZN,ZG) coordinates of the annotated nucleus-Golgi pairs, where:
+* XN, YN, ZN are the (x,y,z) coordinates of the nucleus centroid;
+* XG, YG, ZG are the (x,y,z) coordinates of the corresponding Golgi centroid.
