@@ -4,6 +4,16 @@ This is a Python-based tool for annotating nucleus-Golgi vectors on 3D microscop
 The tool supports annotation of paired centroids and zooming, with the ability to save annotations and load previously saved annotations.
 ![](https://github.com/HemaxiN/VectorAnnotationTool/blob/main/images/annotation_tool.png)
 
+## How to cite
+
+```bibtex
+@article{narotamo49470663dcellpol,
+  title={3dcellpol: Joint Detection and Pairing of Cell Structures to Compute Cell Polarity},
+  author={Narotamo, Hemaxi and Franco, Cl{\'a}udio Areias and Silveira, Margarida},
+  journal={Available at SSRN 4947066}
+}
+```
+
 ## Features
 
 * Multi-Channel Image Support: Load and view RGB TIFF files (the red and green channels will be considered for annotation). Navigate through z-slices using the horizontal slider at the bottom.
