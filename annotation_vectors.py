@@ -28,6 +28,10 @@ class CentroidAnnotationApp:
         self.zoom_factor = 1.0
         self.offset_x = 0
         self.offset_y = 0
+        # Initialize drag-related attributes
+        self.drag_start_x = 0
+        self.drag_start_y = 0
+
 
         # Main Frame
         self.main_frame = ctk.CTkFrame(master)
@@ -87,6 +91,7 @@ class CentroidAnnotationApp:
             self.image[:, :, :, 0] = self.normalization(self.image[:, :, :, 0])
             self.image[:, :, :, 1] = self.normalization(self.image[:, :, :, 1])
             self.image[:, :, :, 2] = self.normalization(self.image[:, :, :, 2])
+            #self.image = self.image[:, :500,:500]
             self.slice_slider.configure(to=self.image.shape[0] - 1)
             self.zoom_factor = 1.0
             self.offset_x = 0
@@ -174,15 +179,45 @@ class CentroidAnnotationApp:
         self.image_canvas.bind("<Button-1>", self.remove_vector_click)
 
     def remove_vector_click(self, event):
+        # Calculate the click position in the image space
         x = (event.x - self.offset_x) / self.zoom_factor
         y = (event.y - self.offset_y) / self.zoom_factor
+        
+        # Define a tolerance for clicking near the line
+        tolerance = 5  # Adjust this value for more or less sensitivity
+        
+        # Iterate through all vectors to find the one closest to the click
         for vector in self.vectors:
             (x1, y1, _), (x2, y2, _) = vector
-            if (x1 <= x <= x2 or x2 <= x <= x1) and (y1 <= y <= y2 or y2 <= y <= y1):
+            
+            # Calculate the distance from the point (x, y) to the line segment
+            distance = self.point_to_line_distance(x, y, x1, y1, x2, y2)
+            
+            # If the distance is within the tolerance, remove the vector
+            if distance <= tolerance:
                 self.remove_vector_from_canvas(vector)
                 self.vectors.remove(vector)
                 break
+        
+        # Unbind the click event after removing the vector
         self.image_canvas.unbind("<Button-1>")
+
+    def point_to_line_distance(self, px, py, x1, y1, x2, y2):
+        """Calculate the distance from a point (px, py) to a line segment (x1, y1) - (x2, y2)."""
+        # Calculate the length squared of the line segment
+        line_length_sq = (x2 - x1) ** 2 + (y2 - y1) ** 2
+        
+        if line_length_sq == 0:
+            # Line segment is a point
+            return ((px - x1) ** 2 + (py - y1) ** 2) ** 0.5
+        
+        # Calculate the projection of the point onto the line (clamping to the segment)
+        t = max(0, min(1, ((px - x1) * (x2 - x1) + (py - y1) * (y2 - y1)) / line_length_sq))
+        projection_x = x1 + t * (x2 - x1)
+        projection_y = y1 + t * (y2 - y1)
+        
+        # Return the distance from the point to the projection
+        return ((px - projection_x) ** 2 + (py - projection_y) ** 2) ** 0.5
 
     def remove_vector_from_canvas(self, vector):
         for item in self.image_canvas.find_all():
