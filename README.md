@@ -7,10 +7,14 @@ The tool supports annotation of paired centroids and zooming, with the ability t
 ## How to cite
 
 ```bibtex
-@article{narotamo49470663dcellpol,
-  title={3dcellpol: Joint Detection and Pairing of Cell Structures to Compute Cell Polarity},
-  author={Narotamo, Hemaxi and Franco, Cl{\'a}udio Areias and Silveira, Margarida},
-  journal={Available at SSRN 4947066}
+@article{narotamo20253dcellpol,
+  title={3DCellPol: Joint detection and pairing of cell structures to compute cell polarity},
+  author={Narotamo, Hemaxi and Franco, Cl{\'a}udio A and Silveira, Margarida},
+  journal={Biomedical Signal Processing and Control},
+  year={2025},
+  volume={104},
+  pages={107537},
+  publisher={Elsevier}
 }
 ```
 
